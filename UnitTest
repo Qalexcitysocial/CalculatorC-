@@ -1,0 +1,142 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace CalculatorUnitTest.test
+{
+    [TestClass]
+    public class CalculatorTest
+    {
+        [TestMethod]
+        public void Test_Add()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            int expected = 20;
+            int operator1 = 10;
+            int operator2 = 10;
+
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Add, operator1, operator2);
+
+            //Assert section 
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Test_Sub()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            int expected = 2;
+            int operator1 = 7;
+            int operator2 = 5;
+
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Subtract, operator1, operator2);
+
+            //Assert section 
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Test_Mult()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            int expected = 20;
+            int operator1 = 5;
+            int operator2 = 4;
+
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Multiply, operator1, operator2);
+
+            //Assert section 
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Test_Divide()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            int expected = 5;
+            int operator1 = 20;
+            int operator2 = 4;
+
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Divide, operator1, operator2);
+
+            //Assert section 
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Test_Negative_Value()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            int expected = -10;
+            int operator1 = 10;
+            int operator2 = -20;
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Add, operator1, operator2);
+
+            //Assert section 
+            Assert.AreEqual(expected, actual);
+            
+        }
+
+        [TestMethod]
+        public void Test_Decimal()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            double expected = 2.5;
+            int operator1 = 5;
+            int operator2 = 2;
+
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Divide, operator1, operator2);
+
+            //Assert section 
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Test_Infinity()
+        {
+            TestApp.Calculation.Calculator Calc = new TestApp.Calculation.Calculator();
+            TestApp.Calculation.ICalculator Calculadora = (TestApp.Calculation.ICalculator)Calc;
+
+            //Arrange
+            double expected = 0;
+            int operator1 = 1;
+            int operator2 = 0;
+
+            //Act
+            double actual = Calculadora.Calculate(TestApp.ECalcOperator.Divide, operator1, operator2);
+
+            //Assert section 
+            // Assert.AreEqual(expected, actual);
+            AssertFailedException.Equals(expected, actual);
+
+        }
+    }
+}
