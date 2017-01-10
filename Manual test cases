@@ -1,0 +1,46 @@
+Write a manual test script covering the basic functionality
+
+Test Suite #1: Checking app behavior
+
+1.1: Verify that app initializes on startup without errors
+1.2: Verify that all texts (“Value A”, “Value B”, “Result”) are displayed when app starts
+1.3: Verify that value input fields are empty when app starts
+1.4: Verify that operator is set to “+” when app starts
+1.5: Verify that “Result” is empty when app starts
+1.6: Verify that app closes without errors
+
+Test Suite #2: Checking value input fields
+(NOTE: We are assuming the application is not filtering any input data from the user)
+(NOTE: We are assuming the input fields have a limit for number of digits entered)
+
+2.1: Verify that you can enter text in “Value A” input field
+2.2: Verify that you can enter text in “Value B” input field
+2.3: Verify that you only can enter as many digits in “Value A” input field as limited allowed
+2.4: Verify that you only can enter as many digits in “Value B” input field as limited allowed
+
+Test Suite #3: Checking operator change
+
+3.1: Verify that operation is set to “-“ when operator is “+” and we click on the operator button
+3.2: Verify that operation is set to “/“ when operator is “-” and we click on the operator button
+3.3: Verify that operation is set to “*“ when operator is “/” and we click on the operator button
+3.4: Verify that operation is set to “+“ when operator is “*” and we click on the operator button
+
+Test Suite #4: Checking operation result
+
+4.1: Verify that “+” operation adds 2 numbers which are valid and result is displayed when clicking “=”
+4.2: Verify that “-” operation subtracts 2 numbers which are valid and result is displayed when clicking “=”
+4.3: Verify that “/” operation divides 2 numbers which are valid and result is displayed when clicking “=”
+4.4: Verify that “*” operation multiplies 2 numbers which are valid and result is displayed when clicking “=”
+4.5: Verify that “Result” shows a double number when operating with double numbers
+4.6: Verify that “Result” shows a double number with a fixed limit of decimals when the result has infinite decimals (e.g. 10 / 3 = 3.33333…)
+4.7: Verify that an error message is showed when trying to execute an operation with “Value A” containing anything which is not a number
+4.8: Verify that an error message is showed when trying to execute an operation with “Value B” containing anything which is not a number
+4.9: Verify that an error message is showed when trying to execute an operation with “Value A” empty
+4.10: Verify that an error message is showed when trying to execute an operation with “Value B” empty
+4.11: Verify that “Result” shows a negative number when subtracting “Value A” < “Value B”
+4.12: Verify that an error message is showed when trying to divide with “Value B” = 0
+4.13: Verify that result is displayed in screen when is bigger than the space in screen
+
+
+
+
